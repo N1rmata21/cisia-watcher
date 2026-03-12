@@ -1,6 +1,5 @@
 import json
 import os
-import re
 from pathlib import Path
 
 import requests
@@ -23,8 +22,9 @@ def extract_rows(html):
 
     rows = []
     for line in text.splitlines():
-        if line.startswith("CENT@UNI") or line.startswith("CENT@CASA"):
-            rows.append(" ".join(line.split()))
+        cleaned = " ".join(line.split())
+        if cleaned.startswith("CENT@UNI") or cleaned.startswith("CENT@CASA"):
+            rows.append(cleaned)
 
     return sorted(set(rows))
 
@@ -39,28 +39,107 @@ def save_snapshot(rows):
     SNAPSHOT_FILE.write_text(json.dumps(rows, indent=2))
 
 
-def send_discord(message):
-    requests.post(
-        WEBHOOK_URL,
-        json={"content": message[:2000]},
-        timeout=30,
-    )
+def split_message(text, limit=3500):
+    if len(text) <= limit:
+        return [text]
+
+    parts = []
+    current = ""
+
+    for line in text.splitlines():
+        candidate = current + ("\n" if current else "") + line
+        if len(candidate) <= limit:
+            current = candidate
+        else:
+            if current:
+                parts.append(current)
+            current = line
+
+    if current:
+        parts.append(current)
+
+    return parts
+
+
+def send_discord_embed(title, description, color):
+    chunks = split_message(description)
+
+    for i, chunk in enumerate(chunks):
+        embed_title = title if i == 0 else f"{title} (cont.)"
+
+        payload = {
+            "embeds": [
+                {
+                    "title": embed_title,
+                    "description": chunk,
+                    "color": color,
+                }
+            ]
+        }
+
+        response = requests.post(
+            WEBHOOK_URL,
+            json=payload,
+            timeout=30,
+        )
+        response.raise_for_status()
 
 
 def main():
     html = fetch_html()
     rows = extract_rows(html)
-
     old_rows = load_snapshot()
 
-    added = list(set(rows) - set(old_rows))
+    added = sorted(set(rows) - set(old_rows))
+    removed = sorted(set(old_rows) - set(rows))
 
-    if added:
-        msg = "🚨 CISIA update detected:\n\n" + "\n".join(added)
-        print(msg)
-        send_discord(msg)
+    if not old_rows:
+        description = (
+            "First run completed.\n"
+            f"Saved {len(rows)} current entries.\n"
+            "From the next run onward, I will report changes."
+        )
+        send_discord_embed(
+            title="CISIA check completed",
+            description=description,
+            color=16711680,  # red
+        )
+        print(description)
+    elif added or removed:
+        lines = []
+        lines.append("Changes found.")
+
+        if added:
+            lines.append("")
+            lines.append("New entries:")
+            for item in added:
+                lines.append(f"• {item}")
+
+        if removed:
+            lines.append("")
+            lines.append("Removed entries:")
+            for item in removed:
+                lines.append(f"• {item}")
+
+        description = "\n".join(lines)
+
+        send_discord_embed(
+            title="CISIA update detected",
+            description=description,
+            color=65280,  # green
+        )
+        print(description)
     else:
-        print("No changes")
+        description = (
+            "No changes detected.\n"
+            f"Entries checked: {len(rows)}"
+        )
+        send_discord_embed(
+            title="CISIA check completed",
+            description=description,
+            color=16711680,  # red
+        )
+        print(description)
 
     save_snapshot(rows)
 
