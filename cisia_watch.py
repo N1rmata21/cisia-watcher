@@ -10,12 +10,8 @@ URL = "https://testcisia.it/calendario.php?tolc=cents&l=it&lingua=inglese"
 SNAPSHOT_FILE = Path("snapshot.json")
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL"]
 
-STATUS_VALUES = [
-    "POSTI DISPONIBILI",
-    "POSTI ESAURITI",
-    "ISCRIZIONI CHIUSE",
-    "ISCRIZIONI CONCLUSE",
-]
+RED = 16711680
+GREEN = 65280
 
 
 def fetch_html():
@@ -28,84 +24,101 @@ def fetch_html():
     return response.text
 
 
-def extract_blocks(html):
+def normalize_text(html):
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text(" ", strip=True)
-    text = re.sub(r"\s+", " ", text)
-
-    pattern = r"(CENT@(?:UNI|CASA).*?(?=CENT@(?:UNI|CASA)|$))"
-    matches = re.findall(pattern, text)
-
-    blocks = []
-    for match in matches:
-        row = " ".join(match.split())
-        if len(row) > 20:
-            blocks.append(row)
-
-    return sorted(set(blocks))
+    text = soup.get_text("\n", strip=True)
+    lines = [" ".join(line.split()) for line in text.splitlines()]
+    return [line for line in lines if line]
 
 
-def guess_city(text):
-    tokens = text.split()
-    if not tokens:
-        return ""
-    return tokens[-1]
+def parse_row(line):
+    if not (line.startswith("CENT@UNI") or line.startswith("CENT@HOME")):
+        return None
 
+    dates = re.findall(r"\b\d{2}/\d{2}/\d{4}\b", line)
+    if len(dates) < 2:
+        return None
 
-def parse_block(block):
-    dates = re.findall(r"\b\d{2}/\d{2}/\d{4}\b", block)
+    booking_deadline = dates[0]
+    test_date = dates[-1]
+    mode = "CENT@UNI" if line.startswith("CENT@UNI") else "CENT@HOME"
 
-    registration_deadline = dates[0] if len(dates) >= 1 else ""
-    test_date = dates[-1] if len(dates) >= 2 else ""
-
-    status = "UNKNOWN"
-    for value in STATUS_VALUES:
-        if value in block:
-            status = value
-            break
-
+    status = None
     seats = None
-    seat_match = re.search(r"\b(\d+)\s+POSTI DISPONIBILI\b", block)
-    if seat_match:
-        seats = int(seat_match.group(1))
 
-    mode = "CENT@UNI" if block.startswith("CENT@UNI") else "CENT@CASA"
+    if "AVAILABLE SEATS" in line:
+        status = "AVAILABLE SEATS"
+        m = re.search(r"\b(\d+)\s+AVAILABLE SEATS\b", line)
+        if m:
+            seats = int(m.group(1))
+    elif "NOT LONGER AVAILABLE" in line:
+        status = "NOT LONGER AVAILABLE"
+    elif "NOT BOOKABLE" in line:
+        status = "NOT BOOKABLE"
+    elif "BOOKINGS CLOSED" in line:
+        status = "BOOKINGS CLOSED"
+        m = re.search(r"\b(\d+)\s+BOOKINGS CLOSED\b", line)
+        if m:
+            seats = int(m.group(1))
 
-    body = block
-    body = body.replace("CENT@UNI", "", 1).strip()
-    body = body.replace("CENT@CASA", "", 1).strip()
+    working = line
+    working = working.replace(mode, "", 1).strip()
+    working = working.replace(booking_deadline, "", 1)
+    working = working.replace(test_date, "", 1)
 
-    for d in dates:
-        body = body.replace(d, " ")
+    for phrase in ["AVAILABLE SEATS", "NOT LONGER AVAILABLE", "NOT BOOKABLE", "BOOKINGS CLOSED"]:
+        working = working.replace(phrase, "")
 
-    for s in STATUS_VALUES:
-        body = body.replace(s, " ")
+    working = re.sub(r"~~", " ", working)
+    working = re.sub(r"\b\d+\b", " ", working)
+    working = re.sub(r"\s+", " ", working).strip()
 
-    if seats is not None:
-        body = re.sub(rf"\b{seats}\b", " ", body)
-
-    body = re.sub(r"\s+", " ", body).strip()
-
-    city = guess_city(body)
+    tokens = working.split()
+    city = tokens[-1] if tokens else ""
+    label = working
 
     return {
         "mode": mode,
+        "label": label,
         "city": city,
-        "label": body,
-        "registration_deadline": registration_deadline,
+        "booking_deadline": booking_deadline,
         "test_date": test_date,
-        "status": status,
+        "status": status or "UNKNOWN",
         "seats": seats,
-        "raw": block,
+        "raw": line,
     }
 
 
-def make_key(record):
+def extract_records(html):
+    lines = normalize_text(html)
+    records = []
+
+    for line in lines:
+        row = parse_row(line)
+        if row:
+            records.append(row)
+
+    deduped = []
+    seen = set()
+    for r in records:
+        key = record_key(r)
+        if key not in seen:
+            seen.add(key)
+            deduped.append(r)
+
+    return sorted(
+        deduped,
+        key=lambda r: (r["test_date"], r["city"], r["mode"], r["booking_deadline"])
+    )
+
+
+def record_key(record):
     return "|".join([
         record.get("mode", ""),
         record.get("city", ""),
+        record.get("booking_deadline", ""),
         record.get("test_date", ""),
-        record.get("registration_deadline", ""),
+        record.get("label", ""),
     ])
 
 
@@ -160,13 +173,15 @@ def send_discord_embed(title, description, color):
 
 
 def compare_records(old_records, new_records):
-    old_map = {make_key(r): r for r in old_records}
-    new_map = {make_key(r): r for r in new_records}
+    old_map = {record_key(r): r for r in old_records}
+    new_map = {record_key(r): r for r in new_records}
 
     new_entries = []
     removed_entries = []
     seat_changes = []
     status_changes = []
+
+    shared_keys = sorted(old_map.keys() & new_map.keys())
 
     for key in sorted(new_map.keys() - old_map.keys()):
         new_entries.append(new_map[key])
@@ -174,22 +189,23 @@ def compare_records(old_records, new_records):
     for key in sorted(old_map.keys() - new_map.keys()):
         removed_entries.append(old_map[key])
 
-    for key in sorted(new_map.keys() & old_map.keys()):
+    for key in shared_keys:
         old = old_map[key]
         new = new_map[key]
 
         if old.get("seats") != new.get("seats"):
             seat_changes.append({
-                "city": new.get("city"),
-                "date": new.get("test_date"),
+                "city": new["city"],
+                "date": new["test_date"],
                 "old": old.get("seats"),
                 "new": new.get("seats"),
+                "status": new.get("status"),
             })
 
         if old.get("status") != new.get("status"):
             status_changes.append({
-                "city": new.get("city"),
-                "date": new.get("test_date"),
+                "city": new["city"],
+                "date": new["test_date"],
                 "old": old.get("status"),
                 "new": new.get("status"),
             })
@@ -203,19 +219,13 @@ def compare_records(old_records, new_records):
 
 
 def format_entry(entry):
-    parts = []
-    if entry.get("city"):
-        parts.append(entry["city"])
-    if entry.get("test_date"):
-        parts.append(entry["test_date"])
-    if entry.get("status"):
-        parts.append(entry["status"])
+    parts = [entry["city"], entry["test_date"], entry["status"]]
     if entry.get("seats") is not None:
         parts.append(f"seats: {entry['seats']}")
     return " | ".join(parts)
 
 
-def build_message(changes, total_count):
+def build_change_message(changes):
     lines = []
 
     if changes["new_entries"]:
@@ -248,45 +258,36 @@ def build_message(changes, total_count):
         for item in changes["removed_entries"]:
             lines.append(f"- {format_entry(item)}")
 
-    if not lines:
-        return f"No changes detected.\nEntries checked: {total_count}"
-
-    return "\n".join(lines)
+    return "\n".join(lines).strip()
 
 
 def main():
     html = fetch_html()
-    blocks = extract_blocks(html)
-    new_records = [parse_block(block) for block in blocks]
+    new_records = extract_records(html)
     old_records = load_snapshot()
 
     if not old_records:
         save_snapshot(new_records)
-        description = (
+        msg = (
             f"First run completed.\n"
             f"Saved {len(new_records)} entries.\n"
             f"Next checks will report detailed changes."
         )
-        send_discord_embed("CISIA check completed", description, 16711680)
-        print(description)
+        send_discord_embed("CISIA check completed", msg, RED)
+        print(msg)
         return
 
     changes = compare_records(old_records, new_records)
-    message = build_message(changes, len(new_records))
+    change_message = build_change_message(changes)
 
-    has_changes = any([
-        changes["new_entries"],
-        changes["removed_entries"],
-        changes["seat_changes"],
-        changes["status_changes"],
-    ])
-
-    if has_changes:
-        send_discord_embed("CISIA update detected", message, 65280)
+    if change_message:
+        send_discord_embed("CISIA update detected", change_message, GREEN)
+        print(change_message)
     else:
-        send_discord_embed("CISIA check completed", message, 16711680)
+        msg = f"No changes detected.\nEntries checked: {len(new_records)}"
+        send_discord_embed("CISIA check completed", msg, RED)
+        print(msg)
 
-    print(message)
     save_snapshot(new_records)
 
 
