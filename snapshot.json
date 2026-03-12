@@ -1,0 +1,462 @@
+[
+  {
+    "mode": "CENT@CASA",
+    "city": "21",
+    "label": "Politecnico di Milano LOMBARDIA MILANO 21",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Politecnico di Milano LOMBARDIA MILANO 06/03/2026 21 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Politecnico di Milano LOMBARDIA MILANO ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Politecnico di Milano LOMBARDIA MILANO 17/04/2026 --- POSTI ESAURITI 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Sapienza Università di Roma LAZIO ROMA ---",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Sapienza Università di Roma LAZIO ROMA 03/06/2026 --- POSTI ESAURITI 09/06/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "24",
+    "label": "Sapienza Università di Roma LAZIO ROMA 24",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Sapienza Università di Roma LAZIO ROMA 06/03/2026 24 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Sapienza Università di Roma LAZIO ROMA ---",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Sapienza Università di Roma LAZIO ROMA 15/05/2026 --- POSTI ESAURITI 21/05/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Sapienza Università di Roma LAZIO ROMA ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Sapienza Università di Roma LAZIO ROMA 17/04/2026 --- POSTI ESAURITI 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "Contatti",
+    "label": "Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE --- Per qualsiasi dubbio o informazione è a disposizione il nostro servizio di Help Desk . CISIA - Via Giuseppe Malagoli, 12 - 56124 Pisa - P.I./C.F. 01951400504 Amministrazione Trasparente [si aprirà in una nuova finestra] FAQ Privacy Mappa del sito Contatti",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 03/06/2026 --- POSTI ESAURITI 09/06/2026 Per qualsiasi dubbio o informazione è a disposizione il nostro servizio di Help Desk . CISIA - Via Giuseppe Malagoli, 12 - 56124 Pisa - P.I./C.F. 01951400504 Amministrazione Trasparente [si aprirà in una nuova finestra] FAQ Privacy Mappa del sito Contatti"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE ---",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 15/05/2026 --- POSTI ESAURITI 21/05/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Universita' Degli Studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 17/04/2026 --- POSTI ESAURITI 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "4",
+    "label": "Università Ca' Foscari Venezia VENETO VENEZIA 4",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università Ca' Foscari Venezia VENETO VENEZIA 06/03/2026 4 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "2",
+    "label": "Università Degli Studi Di Napoli Federico II CAMPANIA NAPOLI 2",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università Degli Studi Di Napoli Federico II CAMPANIA NAPOLI 06/03/2026 2 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi della Campania CAMPANIA CASERTA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi della Campania CAMPANIA CASERTA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "2",
+    "label": "Università degli studi di Brescia LOMBARDIA BRESCIA 2",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Brescia LOMBARDIA BRESCIA 06/03/2026 2 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Brescia LOMBARDIA BRESCIA ---",
+    "registration_deadline": "13/03/2026",
+    "test_date": "19/03/2026",
+    "status": "ISCRIZIONI CHIUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Brescia LOMBARDIA BRESCIA 13/03/2026 --- ISCRIZIONI CHIUSE 19/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Brescia LOMBARDIA BRESCIA ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "ISCRIZIONI CHIUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Brescia LOMBARDIA BRESCIA 17/04/2026 --- ISCRIZIONI CHIUSE 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi di Milano Bicocca LOMBARDIA MILANO 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Milano Bicocca LOMBARDIA MILANO 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Milano Bicocca LOMBARDIA MILANO ---",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "ISCRIZIONI CHIUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Milano Bicocca LOMBARDIA MILANO 15/05/2026 --- ISCRIZIONI CHIUSE 21/05/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Milano Bicocca LOMBARDIA MILANO ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Milano Bicocca LOMBARDIA MILANO 17/04/2026 --- POSTI ESAURITI 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "9",
+    "label": "Università degli studi di Milano LOMBARDIA MILANO 9",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Milano LOMBARDIA MILANO 06/03/2026 9 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Milano LOMBARDIA MILANO ---",
+    "registration_deadline": "13/03/2026",
+    "test_date": "19/03/2026",
+    "status": "ISCRIZIONI CHIUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Milano LOMBARDIA MILANO 13/03/2026 --- ISCRIZIONI CHIUSE 19/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "15",
+    "label": "Università degli studi di Padova VENETO PADOVA 15",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Padova VENETO PADOVA 06/03/2026 15 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Pavia LOMBARDIA PAVIA ---",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Pavia LOMBARDIA PAVIA 17/04/2026 --- POSTI ESAURITI 23/04/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi di Perugia UMBRIA PERUGIA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Perugia UMBRIA PERUGIA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi di Roma Tor Vergata LAZIO ROMA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Roma Tor Vergata LAZIO ROMA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "18",
+    "label": "Università degli studi di Roma Tor Vergata LAZIO ROMA 18",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Roma Tor Vergata LAZIO ROMA 06/03/2026 18 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "61",
+    "label": "Università degli studi di Siena TOSCANA SIENA 61",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Siena TOSCANA SIENA 06/03/2026 61 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Siena TOSCANA SIENA ---",
+    "registration_deadline": "13/03/2026",
+    "test_date": "19/03/2026",
+    "status": "ISCRIZIONI CHIUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Siena TOSCANA SIENA 13/03/2026 --- ISCRIZIONI CHIUSE 19/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi di Trento TRENTINO-ALTO ADIGE TRENTO 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Trento TRENTINO-ALTO ADIGE TRENTO 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi di Udine FRIULI-VENEZIA GIULIA UDINE ---",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi di Udine FRIULI-VENEZIA GIULIA UDINE 15/05/2026 --- POSTI ESAURITI 21/05/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "---",
+    "label": "Università degli studi europea di Roma LAZIO ROMA ---",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI ESAURITI",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi europea di Roma LAZIO ROMA 03/06/2026 --- POSTI ESAURITI 09/06/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "0",
+    "label": "Università degli studi europea di Roma LAZIO ROMA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università degli studi europea di Roma LAZIO ROMA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@CASA",
+    "city": "24",
+    "label": "Università di Siena TOSCANA SIENA 24",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@CASA Università di Siena TOSCANA SIENA 06/03/2026 24 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "0",
+    "label": "Sapienza Universita' di Roma - Facolta' di Ingegneria (I3S) - Dipartimento di Scienze statistiche LAZIO ROMA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@UNI Sapienza Universita' di Roma - Facolta' di Ingegneria (I3S) - Dipartimento di Scienze statistiche LAZIO ROMA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "MESSINA",
+    "label": "Universita' degli studi di Messina SICILIA MESSINA",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 79,
+    "raw": "CENT@UNI Universita' degli studi di Messina SICILIA MESSINA 03/06/2026 79 POSTI DISPONIBILI 09/06/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "MESSINA",
+    "label": "Universita' degli studi di Messina SICILIA MESSINA",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 76,
+    "raw": "CENT@UNI Universita' degli studi di Messina SICILIA MESSINA 15/05/2026 76 POSTI DISPONIBILI 21/05/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "MESSINA",
+    "label": "Universita' degli studi di Messina SICILIA MESSINA",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 70,
+    "raw": "CENT@UNI Universita' degli studi di Messina SICILIA MESSINA 17/04/2026 70 POSTI DISPONIBILI 23/04/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "0",
+    "label": "Universita' degli studi di Padova VENETO PADOVA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@UNI Universita' degli studi di Padova VENETO PADOVA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "0",
+    "label": "Universita' degli studi di Roma Tor Vergata LAZIO ROMA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@UNI Universita' degli studi di Roma Tor Vergata LAZIO ROMA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "TRIESTE",
+    "label": "Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 94,
+    "raw": "CENT@UNI Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 03/06/2026 94 POSTI DISPONIBILI 09/06/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "TRIESTE",
+    "label": "Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 94,
+    "raw": "CENT@UNI Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 15/05/2026 94 POSTI DISPONIBILI 21/05/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "TRIESTE",
+    "label": "Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 82,
+    "raw": "CENT@UNI Universita' degli studi di Trieste FRIULI-VENEZIA GIULIA TRIESTE 17/04/2026 82 POSTI DISPONIBILI 23/04/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "0",
+    "label": "Universita' di Bologna - Ravenna EMILIA-ROMAGNA RAVENNA 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@UNI Universita' di Bologna - Ravenna EMILIA-ROMAGNA RAVENNA 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "RIMINI",
+    "label": "Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI",
+    "registration_deadline": "03/06/2026",
+    "test_date": "09/06/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 44,
+    "raw": "CENT@UNI Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI 03/06/2026 44 POSTI DISPONIBILI 09/06/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "0",
+    "label": "Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI 0",
+    "registration_deadline": "06/03/2026",
+    "test_date": "12/03/2026",
+    "status": "ISCRIZIONI CONCLUSE",
+    "seats": null,
+    "raw": "CENT@UNI Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI 06/03/2026 0 ISCRIZIONI CONCLUSE 12/03/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "RIMINI",
+    "label": "Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI",
+    "registration_deadline": "15/05/2026",
+    "test_date": "21/05/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 33,
+    "raw": "CENT@UNI Universita' di Bologna - Rimini EMILIA-ROMAGNA RIMINI 15/05/2026 33 POSTI DISPONIBILI 21/05/2026"
+  },
+  {
+    "mode": "CENT@UNI",
+    "city": "UDINE",
+    "label": "Università degli studi di Udine FRIULI-VENEZIA GIULIA UDINE",
+    "registration_deadline": "17/04/2026",
+    "test_date": "23/04/2026",
+    "status": "POSTI DISPONIBILI",
+    "seats": 36,
+    "raw": "CENT@UNI Università degli studi di Udine FRIULI-VENEZIA GIULIA UDINE 17/04/2026 36 POSTI DISPONIBILI 23/04/2026"
+  }
+]
